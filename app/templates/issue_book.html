@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Issue Book</title>
+</head>
+<body>
+    <h1>Issue Book: {{ book.title }}</h1>
+    <p>Available copies: {{ book.quantity }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        Borrower Name: <input name="borrower_name"><br>
+        Borrower Email: <input name="borrower_email" type="email"><br>
+        <button type="submit">Issue Book</button>
+    </form>
+    <p><a href="{% url 'book_list' %}">Back to Library</a></p>
+</body>
+</html>

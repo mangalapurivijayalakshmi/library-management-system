@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form method="POST">
+        {% csrf_token %}
+        Title: <input name="title" value="{{ book.title }}"><br>
+        Author: <input name="author" value="{{ book.author }}"><br>
+        Price: <input name="price" type="number" step="0.01" value="{{ book.price }}"><br>
+        Quantity: <input name="quantity" type="number" value="{{ book.quantity }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <p><a href="{% url 'book_list' %}">Back to Library</a></p>
+</body>
+</html>

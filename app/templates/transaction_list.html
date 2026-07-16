@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Transactions</title>
+</head>
+<body>
+    <h1>Active Transactions (Issued Books)</h1>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Book</th>
+            <th>Borrower</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for txn in transactions %}
+        <tr>
+            <td>{{ txn.book.title }}</td>
+            <td>{{ txn.borrower_name }}</td>
+            <td>{{ txn.issue_date }}</td>
+            <td>{{ txn.due_date }}</td>
+            <td>
+                {% if txn.due_date < today %}
+                    Overdue
+                {% else %}
+                    On Time
+                {% endif %}
+            </td>
+            <td><a href="{% url 'return_book' txn.id %}">Return</a></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6">No active transactions</td></tr>
+        {% endfor %}
+    </table>
+    <p><a href="{% url 'book_list' %}">Back to Library</a></p>
+</body>
+</html>
