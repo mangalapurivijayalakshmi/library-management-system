@@ -39,16 +39,16 @@ A full-stack Library Management System built with Python (Django) that goes beyo
 ## 📸 Screenshots
 
 ### Book List
-![Book List](list.png)
+![Book List](list page.png)
 
 ### Add Book
-![Add Book](add_books.png)
+![Add Book](add_books page.png)
 
 ### Issue Book
-![Issue Book](issue_book.png)
+![Issue Book](issue_book page.png)
 
 ### Active Transactions
-![Transactions](transaction.png)
+![Transactions](transaction page.png)
 
 
 
